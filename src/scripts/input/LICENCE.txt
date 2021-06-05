@@ -1,0 +1,2 @@
+Input system adopted from Thrive (https://github.com/Revolutionary-Games/Thrive)
+Copyright (C) 2013-2021  Revolutionary Games
