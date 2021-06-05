@@ -84,3 +84,6 @@ nbproject/
 
 # Vim swap files
 *.swp
+
+# Idea
+/.idea/
