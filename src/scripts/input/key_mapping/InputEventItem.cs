@@ -5,11 +5,6 @@ using Godot;
 ///   Defines one specific event associated with an <see cref="InputActionItem">InputActionItem</see>.
 ///   Handles the input rebinding and the asking the user for a new input action.
 /// </summary>
-/// <remarks>
-///   <para>
-///     Used by OptionsMenu>Inputs>InputGroupContainer>InputGroupItem>InputActionItem>InputEventItem
-///   </para>
-/// </remarks>
 public class InputEventItem : Node
 {
     [Export]

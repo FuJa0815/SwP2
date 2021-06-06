@@ -16,7 +16,15 @@ _global_script_class_icons={
 [application]
 
 config/name="SwP2"
+run/main_scene="res://src/menus/MainMenu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Invoke="*res://src/scripts/Invoke.cs"
+ConfigurationManager="*res://src/scripts/ConfigurationManager.cs"
+StartupActions="*res://src/scripts/StartupActions.cs"
+InputManager="*res://src/scripts/input/InputManager.cs"
 
 [rendering]
 

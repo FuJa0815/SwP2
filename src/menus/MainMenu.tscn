@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/scripts/MainMenu.cs" type="Script" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "MenuSlideLeft"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("VBoxContainer:anchor_right")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0.5, -0.25, -0.422462, 0.177636, 0.300177, 0.249545, -0.23, -0.125, 0, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("VBoxContainer:anchor_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0.5, -0.25, -0.110195, 0.178, 0.3, 0.249545, -0.23, -0.125, 0, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[node name="MainMenu" type="Node"]
+script = ExtResource( 1 )
+GuiAnimationsPath = NodePath("AnimationPlayer")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.3
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewGame" type="Button" parent="VBoxContainer"]
+margin_right = 93.0
+margin_bottom = 20.0
+text = "NEW_GAME"
+
+[node name="LoadGame" type="Button" parent="VBoxContainer"]
+margin_top = 30.0
+margin_right = 93.0
+margin_bottom = 50.0
+text = "LOAD_GAME"
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+margin_top = 60.0
+margin_right = 93.0
+margin_bottom = 80.0
+text = "OPTIONS"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+margin_top = 90.0
+margin_right = 93.0
+margin_bottom = 110.0
+text = "QUIT"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/MenuSlideLeft = SubResource( 1 )
+[connection signal="pressed" from="VBoxContainer/NewGame" to="." method="NewGamePressed"]
+[connection signal="pressed" from="VBoxContainer/LoadGame" to="." method="LoadGamePressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="OptionsPressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="QuitPressed"]

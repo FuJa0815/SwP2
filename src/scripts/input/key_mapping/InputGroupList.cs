@@ -5,7 +5,6 @@ using Godot;
 
 /// <summary>
 ///   Holds the various <see cref="InputGroupItem">input groups</see> in one VBoxContainer.
-///   Used by OptionsMenu>Inputs>InputGroupContainer
 /// </summary>
 public class InputGroupList : VBoxContainer
 {
@@ -169,7 +168,7 @@ public class InputGroupList : VBoxContainer
                 inputGroupItem.DetachAndFree();
         }
 
-        activeInputGroupList = BuildGUI(SimulationParameters.Instance.InputGroups, data);
+        activeInputGroupList = BuildGUI(ConfigurationManager.Instance.InputGroups, data);
     }
 
     public void InitGroupList()
